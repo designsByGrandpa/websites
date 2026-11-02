@@ -219,6 +219,7 @@ dialog .price{font:700 28px/1 var(--hand);color:var(--dot)}
 
 <script>
 const LISTINGS_URL = "https://raw.githubusercontent.com/designsByGrandpa/websites/main/alwayslikenew/listings.json";
+const MEDIA_BASE = "https://cdn.jsdelivr.net/gh/designsByGrandpa/websites@main/alwayslikenew/";
 (async () => {
 document.getElementById("count").textContent = "Loading items…";
 let ITEMS;
@@ -226,6 +227,12 @@ try {
   const r = await fetch(LISTINGS_URL + "?v=" + Math.floor(Date.now() / 60000), { cache: "no-store" });
   if (!r.ok) throw new Error(r.status);
   ITEMS = await r.json();
+  const fix = s => (typeof s === "string" && !/^https?:/.test(s)) ? MEDIA_BASE + s : s;
+  ITEMS.forEach(x => {
+    x.img = fix(x.img);
+    if (x.photos) x.photos = x.photos.map(fix);
+    if (x.videos) x.videos.forEach(v => { v.src = fix(v.src); v.poster = fix(v.poster); });
+  });
 } catch (err) {
   document.getElementById("count").textContent = "The items couldn't load just now. Please refresh the page, or message me on Messenger.";
   return;
