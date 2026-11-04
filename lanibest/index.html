@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>laniBest</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@75..150,500..900&family=Public+Sans:wght@400;500;600;700&family=Kalam:wght@700&display=swap">
+<style>
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+/* Layout: same garage-sale table as AlwaysLikeNew / Hard-Work-Works. Sign-board header, sticky search + category chips, a grid of items each wearing a round price sticker. */
+:root{
+  --paper:#f7f3fc; --card:#ffffff; --ink:#3f2a5c; --muted:#76688a; --line:#e4dbf0;
+  --dot:#ffb59a; --dot-ink:#4a1d0e; --drop:#8e5cd0; --drop-ink:#ffffff; --buy:#d8262e; --buy-ink:#ffffff; --msg:#0a6cff; --msg-ink:#ffffff;
+  --display:"Anybody","Arial Narrow",system-ui,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --hand:"Kalam","Comic Sans MS","Segoe Print",cursive;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#1b1524; --card:#261d33; --ink:#efe8f7; --muted:#b3a6c4; --line:#3a2e4a;
+  --dot:#ffb59a; --dot-ink:#4a1d0e; --drop:#b08ae6; --drop-ink:#1b0f2e; --buy:#ef4a52; --buy-ink:#ffffff; --msg:#3d8bff; --msg-ink:#ffffff; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1b1524; --card:#261d33; --ink:#efe8f7; --muted:#b3a6c4; --line:#3a2e4a;
+  --dot:#ffb59a; --dot-ink:#4a1d0e; --drop:#b08ae6; --drop-ink:#1b0f2e; --buy:#ef4a52; --buy-ink:#ffffff; --msg:#3d8bff; --msg-ink:#ffffff; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.45}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--ink)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.sign{color:#2e1d45;background:radial-gradient(ellipse at 8% 25%,#ff9ad5 0,rgba(255,154,213,0) 38%),radial-gradient(ellipse at 30% 95%,#fff27a 0,rgba(255,242,122,0) 40%),radial-gradient(ellipse at 52% 5%,#9fd8ff 0,rgba(159,216,255,0) 40%),radial-gradient(ellipse at 76% 85%,#a8f0a0 0,rgba(168,240,160,0) 40%),radial-gradient(ellipse at 96% 15%,#c79bff 0,rgba(199,155,255,0) 42%),linear-gradient(105deg,#ffb3de 0%,#d6b0ff 22%,#fff59a 45%,#b5e2ff 68%,#b9f2b0 86%,#ffb3de 100%)}
+header.sign .eyebrow{opacity:.9}
+header.sign .wrap{padding-block:28px 26px;display:flex;gap:20px 32px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap}
+.brand{min-width:0}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.75;font-weight:600}
+h1{font-family:var(--display);font-stretch:115%;font-weight:900;font-size:clamp(28px,6.5vw,60px);overflow-wrap:anywhere;line-height:.95;margin:6px 0 10px;text-wrap:balance}
+h1 span{color:#b0247a}
+.lede{margin:0;max-width:56ch;opacity:.88}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:11px 18px;font:600 15px/1 var(--body);cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn-buy{background:var(--buy);color:var(--buy-ink)}
+.btn-buy:hover,.btn-msg:hover{filter:brightness(1.08)}
+.btn-msg{background:var(--msg);color:var(--msg-ink)}
+.btn-depop{background:#d8262e;color:#fff}
+.btn-vinted{background:#007a73;color:#fff}
+.btn-fb{background:#6b3fc4;color:#fff}
+.btn-depop:hover,.btn-vinted:hover,.btn-fb:hover{filter:brightness(1.1)}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn svg{width:18px;height:18px;flex:none}
+:focus-visible{outline:3px solid var(--dot);outline-offset:2px}
+
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+.bar .wrap{padding-block:12px;display:flex;flex-direction:column;gap:10px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.search{flex:1 1 240px;min-width:0;position:relative}
+.search input{width:100%;padding:11px 14px 11px 38px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:inherit}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--muted)}
+select{padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:inherit}
+.plats{display:flex;gap:8px;flex-wrap:wrap}
+.plat{flex:none;border:2px solid var(--pc);background:var(--card);color:var(--pc);border-radius:999px;padding:7px 14px;font:600 14px/1 var(--body);cursor:pointer}
+.plat b{font-variant-numeric:tabular-nums;opacity:.75;font-weight:600;margin-left:5px}
+.plat[aria-pressed="true"]{background:var(--pc);color:#fff}
+.plat[data-p="All"]{--pc:var(--ink)}.plat[data-p="All"][aria-pressed="true"]{color:var(--paper)}
+.plat[data-p="Depop"]{--pc:#d8262e}.plat[data-p="Vinted"]{--pc:#007a73}.plat[data-p="Facebook"]{--pc:#6b3fc4}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .plat[data-p="Vinted"]:not([aria-pressed="true"]){--pc:#2bb3a9}:root:not([data-theme="light"]) .plat[data-p="Facebook"]:not([aria-pressed="true"]){--pc:#a58af0}:root:not([data-theme="light"]) .plat[data-p="Depop"]:not([aria-pressed="true"]){--pc:#f0646a}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 13px;font:500 14px/1 var(--body);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip b{font-variant-numeric:tabular-nums;opacity:.6;font-weight:600;margin-left:4px}
+
+main .wrap{padding-block:22px 40px}
+.count{color:var(--muted);font-size:14px;margin:0 0 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+@media (max-width:480px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+.item{background:var(--card);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line);min-width:0}
+.photo{position:relative;aspect-ratio:1/1;max-width:100%;background:var(--line);border:0;padding:0;cursor:zoom-in;display:block;width:100%}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.sticker{position:absolute;right:10px;bottom:-22px;width:64px;height:64px;border-radius:50%;background:var(--dot);color:var(--dot-ink);display:grid;place-items:center;font:700 18px/1 var(--hand);transform:rotate(-8deg);box-shadow:0 2px 0 rgba(0,0,0,.18);font-variant-numeric:tabular-nums}
+.sticker.big{font-size:15px}
+.sticker.sale{background:var(--drop);color:var(--drop-ink)}
+.info{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.cat{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;padding-right:66px}
+.name{font-weight:600;font-size:15px;line-height:1.3;margin:0;overflow-wrap:anywhere}
+.was{font-size:13px;color:var(--muted)}
+.was em{font-style:normal;color:var(--drop);font-weight:600}
+.item .btn{margin-top:auto;justify-content:center;padding:10px 12px;font-size:14px}
+@media (max-width:480px){.sticker{width:52px;height:52px;font-size:15px;bottom:-18px}.sticker.big{font-size:12px}.item .btn span.long{display:none}}
+.empty{padding:40px 0;text-align:center;color:var(--muted)}
+
+footer{border-top:1px solid var(--line)}
+footer .wrap{padding-block:26px 34px;display:flex;gap:16px;justify-content:space-between;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:14px}
+footer h2{font-family:var(--display);font-stretch:120%;font-size:22px;color:var(--ink);margin:0 0 4px}
+footer .wrap > div{max-width:60ch}
+.credit{border-top:1px solid var(--line)}
+.credit .wrap{padding-block:18px 28px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;color:var(--muted);font-size:13px}
+.credit p{margin:0}
+.credit a{display:block;border-radius:8px}
+.credit img{width:110px;height:110px;display:block;object-fit:contain}
+
+dialog{border:0;border-radius:16px;padding:0;background:var(--card);color:var(--ink);width:min(460px,calc(100% - 32px));max-height:calc(100% - 32px)}
+dialog::backdrop{background:rgba(10,15,22,.6)}
+dialog img{width:100%;display:block;aspect-ratio:1/1;object-fit:contain;background:var(--line)}
+dialog .info{padding:16px 18px 18px}
+dialog .price{font:700 28px/1 var(--hand);color:var(--dot)}
+.desc{margin:0;color:var(--muted);font-size:14px}
+.desc a{color:var(--ink);font-weight:600}
+.pcount{position:absolute;left:8px;top:8px;display:inline-flex;align-items:center;gap:4px;background:rgba(10,15,22,.72);color:#fff;border-radius:999px;padding:4px 9px;font:600 12px/1 var(--body);font-variant-numeric:tabular-nums}
+.pcount svg{width:13px;height:13px}
+.gal{position:relative;background:var(--line)}
+.gal img{width:100%;display:block;aspect-ratio:1/1;object-fit:contain;background:var(--line)}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:0;background:var(--card);color:var(--ink);font-size:22px;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.25);display:grid;place-items:center}
+.nav.prev{left:10px}.nav.next{right:10px}
+.gnum{position:absolute;left:10px;bottom:10px;background:rgba(10,15,22,.72);color:#fff;border-radius:999px;padding:5px 10px;font:600 13px/1 var(--body);font-variant-numeric:tabular-nums}
+.thumbs{display:flex;gap:6px;padding:10px 18px 0;overflow-x:auto;scrollbar-width:thin}
+.thumbs button{flex:none;width:56px;height:56px;padding:0;border:2px solid transparent;border-radius:8px;overflow:hidden;cursor:pointer;background:var(--line)}
+.thumbs button[aria-current="true"]{border-color:var(--dot)}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.close{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:0;background:var(--card);color:var(--ink);font-size:20px;cursor:pointer}
+@media (prefers-reduced-motion:no-preference){.item{transition:transform .15s ease}.item:hover{transform:translateY(-2px)}}
+</style>
+</head>
+<body>
+
+
+<header class="sign">
+  <div class="wrap">
+    <div class="brand">
+      <div class="eyebrow">Vintage · Clothing · Cute finds</div>
+      <h1>lani<span>Best</span></h1>
+      <p class="lede" id="lede">Crop tops, dresses, vintage, bags and collectibles. Tap an item to see all its photos, then buy it on Depop, Vinted or Facebook Marketplace.</p>
+    </div>
+    <div class="btns">
+      <a class="btn btn-msg" href="https://www.messenger.com/t/61584101292436" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.4 2 2 6.1 2 11.5c0 2.9 1.3 5.4 3.4 7.2V22l3.1-1.7c1.1.3 2.3.5 3.5.5 5.6 0 10-4.1 10-9.4S17.6 2 12 2zm1 12.6-2.6-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.4 5.8z"/></svg> Message me on Messenger</a><a class="btn btn-depop" href="https://www.depop.com/pinkglitterpony/" target="_blank" rel="noopener">Depop shop</a><a class="btn btn-vinted" href="https://www.vinted.com/member/313074714" target="_blank" rel="noopener">Vinted shop</a><a class="btn btn-fb" href="https://www.facebook.com/marketplace/profile/61584101292436/" target="_blank" rel="noopener">Facebook shop</a>
+    </div>
+  </div>
+</header>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="row">
+      <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Search items, e.g. crop top, Sanrio, denim" aria-label="Search items"></label>
+      <select id="sort" aria-label="Sort items">
+        <option value="new">Newest first</option>
+        <option value="low">Price: low to high</option>
+        <option value="high">Price: high to low</option>
+        <option value="drop">Price drops first</option>
+      </select>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Categories"></div>
+    <div class="plats" id="plats" role="group" aria-label="Show items from"></div>
+  </div>
+</div>
+
+<main><div class="wrap">
+  <p class="count" id="count"></p>
+  <div class="grid" id="grid"></div>
+  <p class="empty" id="empty" hidden>Nothing matches that search. Try another word, or message me on Messenger and ask.</p>
+</div></main>
+
+<footer><div class="wrap">
+  <div><h2>Questions about an item?</h2>Message me on Messenger, or send a DM on Depop or Vinted. Answers usually come fast. Prices match the listings. Checkout happens on Depop or Vinted, and Facebook items are paid and picked up through Facebook Marketplace.<div class="btns" style="margin-top:14px"><a class="btn btn-msg" href="https://www.messenger.com/t/61584101292436" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.4 2 2 6.1 2 11.5c0 2.9 1.3 5.4 3.4 7.2V22l3.1-1.7c1.1.3 2.3.5 3.5.5 5.6 0 10-4.1 10-9.4S17.6 2 12 2zm1 12.6-2.6-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.4 5.8z"/></svg> Message me on Messenger</a></div></div>
+  <div class="btns"><a class="btn btn-depop" href="https://www.depop.com/pinkglitterpony/" target="_blank" rel="noopener">Depop shop</a><a class="btn btn-vinted" href="https://www.vinted.com/member/313074714" target="_blank" rel="noopener">Vinted shop</a><a class="btn btn-fb" href="https://www.facebook.com/marketplace/profile/61584101292436/" target="_blank" rel="noopener">Facebook shop</a></div>
+</div></footer>
+
+<section class="credit"><div class="wrap">
+  <p>Website designed and built by Designs by Grandpa</p>
+  <p>Want a similar website to showcase your products? Click the logo below.</p>
+  <a href="https://www.designsbygrandpa.com" target="_blank" rel="noopener" aria-label="Designs by Grandpa website"><img src="designs-by-grandpa-logo%201.jpg" alt="Designs by Grandpa logo" width="110" height="110" loading="lazy"></a>
+</div></section>
+
+<dialog id="dlg" aria-label="Item details">
+  <div class="gal" id="gal">
+    <img id="dImg" alt="">
+    <button class="nav prev" id="gPrev" type="button" aria-label="Previous photo">‹</button>
+    <button class="nav next" id="gNext" type="button" aria-label="Next photo">›</button>
+    <span class="gnum" id="gNum"></span>
+    <button class="close" id="dClose" type="button" aria-label="Close">×</button>
+  </div>
+  <div class="thumbs" id="thumbs"></div>
+  <div class="info">
+    <div class="cat" id="dCat" style="padding-right:0"></div>
+    <p class="name" id="dName" style="font-size:18px"></p>
+    <p class="desc" id="dDesc"></p>
+    <div><span class="price" id="dPrice"></span> <span class="was" id="dWas"></span></div>
+    <p class="desc" id="dAlso" hidden></p>
+    <a class="btn btn-buy" id="dBuy" href="https://www.depop.com/pinkglitterpony/" target="_blank" rel="noopener" style="justify-content:center;margin-top:6px">Buy on Depop</a>
+    <a class="btn btn-msg" href="https://www.messenger.com/t/61584101292436" target="_blank" rel="noopener" style="justify-content:center"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.4 2 2 6.1 2 11.5c0 2.9 1.3 5.4 3.4 7.2V22l3.1-1.7c1.1.3 2.3.5 3.5.5 5.6 0 10-4.1 10-9.4S17.6 2 12 2zm1 12.6-2.6-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.4 5.8z"/></svg> Message me on Messenger</a>
+  </div>
+</dialog>
+
+<script>
+const LISTINGS_URL = "https://raw.githubusercontent.com/designsByGrandpa/websites/main/lanibest/listings.json";
+const MEDIA_BASE = "https://raw.githubusercontent.com/designsByGrandpa/websites/main/lanibest/";
+(async () => {
+document.getElementById("count").textContent = "Loading items…";
+let ITEMS;
+try {
+  const r = await fetch(LISTINGS_URL + "?v=" + Math.floor(Date.now() / 60000), { cache: "no-store" });
+  if (!r.ok) throw new Error(r.status);
+  ITEMS = await r.json();
+  const fix = s => (typeof s === "string" && !/^https?:/.test(s)) ? MEDIA_BASE + s : s;
+  ITEMS.forEach(x => { x.imgs = (x.imgs || []).map(fix); });
+} catch (err) {
+  document.getElementById("count").textContent = "The items couldn't load just now. Please refresh the page, or message me on Messenger.";
+  return;
+}
+const CATS = ["All","Crop Tops & Tanks","Tops & Tees","Dresses, Swim & PJs","Shorts, Skirts & Pants","Shoes","Bags & Accessories","Home, Toys & Collectibles","Kids & Baby","Bundles & Lots"];
+const BTN = {Depop:"btn-depop", Vinted:"btn-vinted", Facebook:"btn-fb"};
+const money = n => n===0 ? "Free" : "$" + (Number.isInteger(n) ? n : n.toFixed(2));
+ITEMS.forEach((it,i)=>{ it.i=i; });
+let cat="All", q="", sort="new", plat="All";
+const onPlat = x => plat==="All" || x.src===plat;
+const V = x => { const base={...x, osrc:x.src, ou:x.u}; if(plat==="All"||x.src===plat) return base; const a=(x.also||[]).find(a=>a[0]===plat); return a ? {...base, src:a[0], u:a[1], p:(a[2]!=null?a[2]:x.p), w:null} : base; };
+try{ const s=localStorage.getItem("lb-sort"); if(s) sort=s; }catch(e){}
+document.getElementById("sort").value=sort;
+
+const chips=document.getElementById("chips");
+CATS.forEach(c=>{
+  const n = c==="All" ? ITEMS.length : ITEMS.filter(x=>x.c===c).length;
+  if(!n) return;
+  const b=document.createElement("button"); b.className="chip"; b.type="button";
+  b.innerHTML=`${c}<b>${n}</b>`; b.dataset.c=c; b.setAttribute("aria-pressed", c===cat);
+  b.onclick=()=>{cat=c; chips.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed", x===b)); render();};
+  chips.appendChild(b);
+});
+
+const plats=document.getElementById("plats");
+["All","Depop","Vinted","Facebook"].forEach(p=>{ const n=ITEMS.filter(x=>p==="All"||x.src===p).length; const b=document.createElement("button"); b.type="button"; b.className="plat"; b.dataset.p=p; b.innerHTML=`${p==="All"?"All platforms":p}<b>${n}</b>`; b.setAttribute("aria-pressed", p===plat); b.onclick=()=>{ plat=p; plats.querySelectorAll(".plat").forEach(x=>x.setAttribute("aria-pressed", x===b)); render(); }; plats.appendChild(b); });
+const esc = s => String(s).replace(/[&<>"]/g, ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
+const cam = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>';
+const bag = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>';
+
+function render(){
+  const words=q.toLowerCase().split(/\s+/).filter(Boolean);
+  let list=ITEMS.filter(x=>onPlat(x) && (cat==="All"||x.c===cat) && words.every(w=>(x.full+" "+x.c).toLowerCase().includes(w))).map(V);
+  chips.querySelectorAll(".chip").forEach(ch=>{ const c=ch.dataset.c; ch.querySelector("b").textContent=ITEMS.filter(x=>onPlat(x)&&(c==="All"||x.c===c)).length; });
+  const by={new:(a,b)=>a.o-b.o, low:(a,b)=>a.p-b.p, high:(a,b)=>b.p-a.p, drop:(a,b)=>((b.w?b.w-b.p:0)-(a.w?a.w-a.p:0))||a.o-b.o};
+  list.sort(by[sort]);
+  document.getElementById("count").textContent = `${list.length} item${list.length===1?"":"s"}${cat!=="All"?" in "+cat:""}${plat!=="All"?" on "+plat:""}`;
+  document.getElementById("empty").hidden = list.length>0;
+  document.getElementById("grid").innerHTML = list.map(x=>{
+    const label = money(x.p);
+    return `<article class="item">
+      <button class="photo" type="button" data-open="${x.i}" aria-label="View ${esc(x.t)}">
+        <img src="${x.imgs[0]}" alt="${esc(x.t)}" loading="lazy">
+        ${x.imgs.length>1?`<span class="pcount">${cam}${x.imgs.length}</span>`:""}
+        <span class="sticker${x.w?" sale":""}${label.length>4?" big":""}">${label}</span>
+      </button>
+      <div class="info">
+        <div class="cat">${x.c}</div>
+        <p class="name">${esc(x.t)}</p>
+        ${x.w?`<div class="was">Was <s>${money(x.w)}</s> · <em>${money(+(x.w-x.p).toFixed(2))} off</em></div>`:""}
+        <a class="btn ${BTN[x.src]||"btn-buy"}" href="${x.u}" target="_blank" rel="noopener">${bag}<span>Buy <span class="long">on ${x.src}</span></span></a>
+      </div>
+    </article>`;}).join("");
+}
+
+const dlg=document.getElementById("dlg");
+let cur=null, pi=0;
+const thumbs=document.getElementById("thumbs");
+function show(n){
+  if(!cur) return; const L=cur.imgs.length; pi=(n+L)%L;
+  const im=document.getElementById("dImg"); im.src=cur.imgs[pi]; im.alt=`${cur.t} (photo ${pi+1} of ${L})`;
+  document.getElementById("gNum").textContent=`${pi+1} / ${L}`;
+  thumbs.querySelectorAll("button").forEach((b,k)=>b.setAttribute("aria-current",k===pi));
+  const t=thumbs.children[pi]; if(t) t.scrollIntoView({block:"nearest",inline:"nearest"});
+}
+function openItem(x){
+  cur=x; const multi=x.imgs.length>1;
+  ["gPrev","gNext","gNum"].forEach(id=>document.getElementById(id).hidden=!multi);
+  thumbs.hidden=!multi;
+  thumbs.innerHTML = multi ? x.imgs.map((s,k)=>`<button type="button" data-k="${k}" aria-label="Photo ${k+1}"><img src="${s}" alt=""></button>`).join("") : "";
+  show(0);
+  document.getElementById("dCat").textContent=x.c;
+  document.getElementById("dName").textContent=x.t;
+  document.getElementById("dDesc").textContent = x.full!==x.t ? x.full : "";
+  document.getElementById("dPrice").textContent=money(x.p);
+  document.getElementById("dWas").innerHTML = x.w?`was <s>${money(x.w)}</s>`:"";
+  const b=document.getElementById("dBuy"); b.href=x.u; b.textContent="Buy on "+x.src; b.className="btn "+(BTN[x.src]||"btn-buy");
+  const al=document.getElementById("dAlso"); const ot=[[x.osrc||x.src, x.ou||x.u], ...(x.also||[])].filter(a=>a[0]!==x.src); al.hidden=!ot.length; al.innerHTML = ot.length ? "Also listed on " + ot.map(a=>`<a href="${a[1]}" target="_blank" rel="noopener">${a[0]}</a>`).join(", ") : "";
+  dlg.showModal();
+}
+document.getElementById("grid").addEventListener("click",e=>{
+  const o=e.target.closest("[data-open]"); if(o){openItem(V(ITEMS[+o.dataset.open]));}
+});
+document.getElementById("dClose").onclick=()=>dlg.close();
+document.getElementById("gPrev").onclick=()=>show(pi-1);
+document.getElementById("gNext").onclick=()=>show(pi+1);
+thumbs.addEventListener("click",e=>{const b=e.target.closest("[data-k]"); if(b) show(+b.dataset.k);});
+dlg.addEventListener("keydown",e=>{ if(!cur||cur.imgs.length<2) return; if(e.key==="ArrowLeft"){show(pi-1);e.preventDefault();} if(e.key==="ArrowRight"){show(pi+1);e.preventDefault();} });
+let tx=null; const gal=document.getElementById("gal");
+gal.addEventListener("touchstart",e=>{tx=e.touches[0].clientX;},{passive:true});
+gal.addEventListener("touchend",e=>{ if(tx===null||!cur||cur.imgs.length<2) return; const dx=e.changedTouches[0].clientX-tx; tx=null; if(Math.abs(dx)>40) show(pi+(dx<0?1:-1)); });
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close();});
+document.getElementById("q").addEventListener("input",e=>{q=e.target.value;render();});
+document.getElementById("sort").addEventListener("change",e=>{sort=e.target.value; try{localStorage.setItem("lb-sort",sort);}catch(_){} render();});
+document.getElementById("lede").textContent = `${ITEMS.length} things for sale: crop tops, dresses, vintage, bags, collectibles and more. Tap an item to see all its photos, then buy it on Depop, Vinted or Facebook Marketplace.`;
+render();
+})();
+</script>
+
+</body>
+</html>
