@@ -14,7 +14,7 @@
 :root{
   --paper:#fbf6f5; --card:#ffffff; --ink:#3b2235; --muted:#7a6372; --line:#eddcdf;
   --head:#fbe3ea; --head2:#f1e4f6; --head-ink:#4a1d3a; --rose:#c64a7a;
-  --dot:#ff8ea6; --dot-ink:#3a0f1f; --drop:#2fa863; --drop-ink:#062b15; --msg:#0a7cff; --msg2:#9b3cff; --msg-ink:#ffffff; --fbk:#1559c9; --fbk-ink:#ffffff; --dep:#e8361f; --dep-ink:#ffffff; --eby:#f5af02; --eby-ink:#231800; --eby-t:#8a6100;
+  --dot:#ff8ea6; --dot-ink:#3a0f1f; --drop:#2fa863; --drop-ink:#062b15; --msg:#0a7cff; --msg2:#9b3cff; --msg-ink:#ffffff; --fbk:#1559c9; --fbk-ink:#ffffff; --dep:#e8361f; --dep-ink:#ffffff; --eby:#f5af02; --eby-ink:#231800; --eby-t:#8a6100; --vin:#007782; --vin-ink:#ffffff; --vin-t:#007782;
   --display:"Fraunces",Georgia,"Times New Roman",serif;
   --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --hand:"Kalam","Comic Sans MS","Segoe Print",cursive;
@@ -22,11 +22,11 @@
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --paper:#1a1217; --card:#251a21; --ink:#f6eaf0; --muted:#bba4b1; --line:#3b2b35;
   --head:#3f1d31; --head2:#2e1b33; --head-ink:#fde9f0; --rose:#ff9cbc;
-  --dot:#ff9cb2; --dot-ink:#3a0f1f; --drop:#3cc77a; --drop-ink:#04210f; --msg:#3d8bff; --msg-ink:#ffffff; --dep:#ff5a3c; --dep-ink:#1a0400; --eby-t:#f5af02; color-scheme:dark}}
+  --dot:#ff9cb2; --dot-ink:#3a0f1f; --drop:#3cc77a; --drop-ink:#04210f; --msg:#3d8bff; --msg-ink:#ffffff; --dep:#ff5a3c; --dep-ink:#1a0400; --eby-t:#f5af02; --vin:#09b1ba; --vin-ink:#00262a; --vin-t:#3fc6cf; color-scheme:dark}}
 :root[data-theme="dark"]{
   --paper:#1a1217; --card:#251a21; --ink:#f6eaf0; --muted:#bba4b1; --line:#3b2b35;
   --head:#3f1d31; --head2:#2e1b33; --head-ink:#fde9f0; --rose:#ff9cbc;
-  --dot:#ff9cb2; --dot-ink:#3a0f1f; --drop:#3cc77a; --drop-ink:#04210f; --msg:#3d8bff; --msg-ink:#ffffff; --dep:#ff5a3c; --dep-ink:#1a0400; --eby-t:#f5af02; color-scheme:dark}
+  --dot:#ff9cb2; --dot-ink:#3a0f1f; --drop:#3cc77a; --drop-ink:#04210f; --msg:#3d8bff; --msg-ink:#ffffff; --dep:#ff5a3c; --dep-ink:#1a0400; --eby-t:#f5af02; --vin:#09b1ba; --vin-ink:#00262a; --vin-t:#3fc6cf; color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.45}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--head)}
@@ -53,9 +53,12 @@ h1 span{color:var(--rose);font-style:italic;font-weight:600}
 .plat button[data-src="depop"][aria-pressed="true"]{background:var(--dep);color:var(--dep-ink);border-color:var(--dep)}
 .plat button[data-src="ebay"]{border-color:var(--eby);color:var(--eby-t)}
 .plat button[data-src="ebay"][aria-pressed="true"]{background:var(--eby);color:var(--eby-ink);border-color:var(--eby)}
-@media (max-width:480px){.plat .lg{display:none}.plat{gap:6px}.plat button{flex:1;padding:9px 4px;font-size:13px}.hbtns .btn{flex:1 1 auto;justify-content:center}}
+.plat button[data-src="vinted"]{border-color:var(--vin);color:var(--vin-t)}
+.plat button[data-src="vinted"][aria-pressed="true"]{background:var(--vin);color:var(--vin-ink);border-color:var(--vin)}
+@media (max-width:480px){.plat .lg{display:none}.plat{gap:6px}.plat{flex-wrap:wrap}.plat button{flex:1 1 28%;padding:9px 4px;font-size:13px}.hbtns .btn{flex:1 1 auto;justify-content:center}}
 .btn-dep{background:var(--dep);color:var(--dep-ink)}
 .btn-eby{background:var(--eby);color:var(--eby-ink)}
+.btn-vin{background:var(--vin);color:var(--vin-ink)}
 .seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card);flex:none;max-width:100%}
 .seg button{border:0;background:transparent;color:var(--ink);font:500 14px/1 var(--body);padding:11px 12px;cursor:pointer;white-space:nowrap}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
@@ -142,7 +145,7 @@ dialog .price{font:700 28px/1 var(--hand);color:var(--dot)}
 <header class="sign">
   <div class="wrap">
     <div class="brand">
-      <div class="eyebrow">Pickups are in Clermont, FL · Depop items ship from Depop.com · eBay items ship from eBay.com</div>
+      <div class="eyebrow">Pickups are in Clermont, FL · Depop items ship from Depop.com · eBay and Vinted items ship from eBay.com and Vinted.com</div>
       <h1>AlwaysLikeNew<span>.com</span></h1>
       <p class="lede" id="lede">Home decor, electronics, Harley parts, tools and more. Everything here is available now. Tap an item to message me about it on Messenger.</p>
     </div>
@@ -154,6 +157,7 @@ dialog .price{font:700 28px/1 var(--hand);color:var(--dot)}
       <a class="btn btn-fbk" href="https://www.facebook.com/marketplace/profile/650766317/" target="_blank" rel="noopener">Facebook shop</a>
       <a class="btn btn-dep" href="https://www.depop.com/alwayslikenew/" target="_blank" rel="noopener">Depop shop</a>
       <a class="btn btn-eby" href="https://www.ebay.com/usr/kimberly9811" target="_blank" rel="noopener">eBay shop</a>
+      <a class="btn btn-vin" href="https://www.vinted.com/member/3193050140" target="_blank" rel="noopener">Vinted shop</a>
     </div>
   </div>
 </header>
@@ -176,6 +180,7 @@ dialog .price{font:700 28px/1 var(--hand);color:var(--dot)}
       <button type="button" data-src="fb" aria-pressed="false">Facebook<span class="lg"> Marketplace</span></button>
       <button type="button" data-src="depop" aria-pressed="false">Depop</button>
       <button type="button" data-src="ebay" aria-pressed="false">eBay</button>
+      <button type="button" data-src="vinted" aria-pressed="false">Vinted</button>
     </div>
   </div>
 </div>
@@ -187,7 +192,7 @@ dialog .price{font:700 28px/1 var(--hand);color:var(--dot)}
 </div></main>
 
 <footer><div class="wrap">
-  <div><h2>See something you like?</h2>Local items: message me on Messenger with the item name, pickup in the Clermont area. Items marked Depop or eBay ship to you: buy them on Depop or eBay.</div>
+  <div><h2>See something you like?</h2>Local items: message me on Messenger with the item name, pickup in the Clermont area. Items marked Depop, eBay or Vinted ship to you: buy them on that site.</div>
   <a class="btn btn-msg" href="https://m.me/kimberlychase123" target="_blank" rel="noopener">Message me</a>
 </div></footer>
 <section class="credit" aria-label="Site credit"><div class="wrap">
@@ -279,7 +284,7 @@ function layoutChips(){
 let chipT; addEventListener("resize",()=>{clearTimeout(chipT);chipT=setTimeout(layoutChips,120);});
 document.fonts&&document.fonts.ready.then(layoutChips);
 buildChips();
-(function(){const n={all:ITEMS.length,fb:ITEMS.filter(x=>x.src==="fb").length,depop:ITEMS.filter(x=>x.src==="depop").length,ebay:ITEMS.filter(x=>x.src==="ebay").length};document.querySelectorAll("#seg [data-src]").forEach(b=>{if(!b.querySelector(".pc"))b.insertAdjacentHTML("beforeend",`<span class="pc">${n[b.dataset.src]}</span>`);});})();
+(function(){const n={all:ITEMS.length,fb:ITEMS.filter(x=>x.src==="fb").length,depop:ITEMS.filter(x=>x.src==="depop").length,ebay:ITEMS.filter(x=>x.src==="ebay").length,vinted:ITEMS.filter(x=>x.src==="vinted").length};document.querySelectorAll("#seg [data-src]").forEach(b=>{if(!b.querySelector(".pc"))b.insertAdjacentHTML("beforeend",`<span class="pc">${n[b.dataset.src]}</span>`);});})();
 document.getElementById("seg").addEventListener("click",e=>{
   const b=e.target.closest("[data-src]"); if(!b) return;
   src=b.dataset.src; document.querySelectorAll("#seg button").forEach(x=>x.setAttribute("aria-pressed", x===b));
@@ -305,10 +310,10 @@ function render(){
         <span class="sticker${x.w?" sale":""}${label.length>5?" big":""}">${label}</span>
       </button>
       <div class="info">
-        <div class="cat">${x.src==="depop"?"Depop · ships":x.src==="ebay"?"eBay · ships":"Pickup"} · ${x.c}</div>
+        <div class="cat">${x.src==="depop"?"Depop · ships":x.src==="ebay"?"eBay · ships":x.src==="vinted"?"Vinted · ships":"Pickup"} · ${x.c}</div>
         <p class="name">${esc(x.t)}</p>
         ${x.w?`<div class="was">Was <s>${money(x.w)}</s> · <em>${money(x.w-x.p)} off</em></div>`:""}
-        ${x.src==="depop" ? `<a class="btn btn-dep" href="${x.u}" target="_blank" rel="noopener">Buy on Depop</a>` : x.src==="ebay" ? `<a class="btn btn-eby" href="${x.u}" target="_blank" rel="noopener">Buy on eBay</a>` : `<a class="btn btn-msg" href="${MSG}" target="_blank" rel="noopener" data-msg="${x.i}">${icon}<span>Message <span class="long">about this</span></span></a>`}
+        ${x.src==="depop" ? `<a class="btn btn-dep" href="${x.u}" target="_blank" rel="noopener">Buy on Depop</a>` : x.src==="ebay" ? `<a class="btn btn-eby" href="${x.u}" target="_blank" rel="noopener">Buy on eBay</a>` : x.src==="vinted" ? `<a class="btn btn-vin" href="${x.u}" target="_blank" rel="noopener">Buy on Vinted</a>` : `<a class="btn btn-msg" href="${MSG}" target="_blank" rel="noopener" data-msg="${x.i}">${icon}<span>Message <span class="long">about this</span></span></a>`}
       </div>
     </article>`;}).join("");
 }
@@ -342,11 +347,12 @@ function openItem(x){
   thumbs.innerHTML = ph.length>1 ? ph.map((m,k)=>`<button type="button" data-k="${k}" aria-label="${m.t==="v"?"Video":"Photo "+(k+1)}"><img src="${m.t==="v"?m.p:m.s}" alt="" loading="lazy">${m.t==="v"?'<span class="play">▶</span>':""}</button>`).join("") : "";
   thumbs.hidden = ph.length<2; prevB.hidden = nextB.hidden = ph.length<2;
   nPh = ph.length; track.scrollLeft = 0; setCur(0);
-  document.getElementById("dCat").textContent=(x.src==="depop"?"Depop · ships":x.src==="ebay"?"eBay · ships":"Pickup in Clermont")+" · "+x.c+(x.b?" · "+x.b:"");
+  document.getElementById("dCat").textContent=(x.src==="depop"?"Depop · ships":x.src==="ebay"?"eBay · ships":x.src==="vinted"?"Vinted · ships":"Pickup in Clermont")+" · "+x.c+(x.b?" · "+x.b:"");
   const dd=document.getElementById("dDesc"); dd.textContent=x.desc||""; dd.hidden=!x.desc;
   const dm=document.getElementById("dMsg"), dh=document.getElementById("dHow");
   if(x.src==="depop"){ dm.className="btn btn-dep"; dm.href=x.u; dm.textContent="Buy on Depop"; dh.textContent="Opens this item on Depop, where you can pay and have it shipped."; }
   else if(x.src==="ebay"){ dm.className="btn btn-eby"; dm.href=x.u; dm.textContent="Buy on eBay"; dh.textContent="Opens this item on eBay, where you can pay and have it shipped."; }
+  else if(x.src==="vinted"){ dm.className="btn btn-vin"; dm.href=x.u; dm.textContent="Buy on Vinted"; dh.textContent="Opens this item on Vinted, where you can pay and have it shipped."; }
   else { dm.className="btn btn-msg"; dm.href=MSG; dm.textContent="Message me about this"; dh.textContent="Tapping the button copies a ready-made message, so you can paste it straight into Messenger."; }
   document.getElementById("dName").textContent=x.t;
   document.getElementById("dPrice").textContent=money(x.p);
@@ -363,7 +369,7 @@ dlg.addEventListener("close",()=>track.querySelectorAll("video").forEach(v=>v.pa
 dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close();});
 document.getElementById("q").addEventListener("input",e=>{q=e.target.value;render();});
 document.getElementById("sort").addEventListener("change",e=>{sort=e.target.value; try{localStorage.setItem("cf-sort",sort);}catch(_){} render();});
-document.getElementById("lede").textContent = `${ITEMS.length} things for sale: home decor, electronics, Harley parts, tools, clothing and more. Local items are pickup in Clermont, so message me on Messenger. Items marked Depop or eBay ship to you through Depop or eBay.`;
+document.getElementById("lede").textContent = `${ITEMS.length} things for sale: home decor, electronics, Harley parts, tools, clothing and more. Local items are pickup in Clermont, so message me on Messenger. Items marked Depop, eBay or Vinted ship to you through that site.`;
 render();
 })();
 </script>
