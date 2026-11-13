@@ -1,7 +1,7 @@
 [
   {
     "t": "Nike kids Dri-Fit hoodie with orange Nike logo, youth M",
-    "full": "Nike kids Dri-Fit hoodie with orange Nike on chest. SIZE YOUTH MEDIUM.",
+    "full": "Nike kids Dro-Fit hoodie with orange Nike on chest. SIZE YOUTH MEDIUM.",
     "p": 6,
     "w": null,
     "c": "Kids & Baby",
@@ -29,7 +29,7 @@
   },
   {
     "t": "Blackburn College Wrestling black t-shirt, size L",
-    "full": "Blackburn College Wrestling black t-shirt with red and white text graphic. SIZE LARGE.",
+    "full": "Blackburn College Wrestling black t-shirt with red and white text graphic. SIZE LARGE",
     "p": 5,
     "w": null,
     "c": "Grappling & Wrestling",
@@ -42,7 +42,7 @@
   },
   {
     "t": "Better Together black fold-over shorts with built-in shorts",
-    "full": "Better Together black fold-over shorts with built-in shorts.",
+    "full": "Better Together Black fold over shorts with built in shorts",
     "p": 5,
     "w": 6,
     "c": "Pants & Shorts",
@@ -55,7 +55,7 @@
   },
   {
     "t": "Better Together cream & pink shorts, size M",
-    "full": "Better Together cream & pink shorts. SIZE MEDIUM.",
+    "full": "Better Together Cream & pink shorts. SIZE MEDIUM",
     "p": 5,
     "w": 6,
     "c": "Pants & Shorts",
@@ -68,7 +68,7 @@
   },
   {
     "t": "Art Class blue, pink & green tie-dye hoodie, size L",
-    "full": "Art Class tie-dye hoodie in blue, pink, and green with a relaxed fit, size L.",
+    "full": "Art Class tie-dye hoodie in blue, pink, and green with a relaxed fit, size L",
     "p": 3.75,
     "w": 5,
     "c": "Sweatshirts & Jackets",
@@ -82,7 +82,7 @@
   },
   {
     "t": "Kingz Kimonos black hoodie with crown graphic, size S",
-    "full": "Kingz Kimonos black hoodie with white 'KINGZ' text and crown graphic. SIZE SMALL.",
+    "full": "Kingz Kimonos Black hoodie with white 'KINGZ' text and crown graphic. SIZE SMALL.",
     "p": 15,
     "w": null,
     "c": "Grappling & Wrestling",
@@ -95,7 +95,7 @@
   },
   {
     "t": "Adidas black camo hoodie with white logo, youth L",
-    "full": "Adidas black camo hoodie with white logo. YOUTH LARGE.",
+    "full": "Adidas black camo hoodie with white logo. YOUTH LARGE",
     "p": 4,
     "w": null,
     "c": "Kids & Baby",
@@ -109,7 +109,7 @@
   },
   {
     "t": "Champion black t-shirt with white logo, youth M",
-    "full": "Champion black t-shirt with white logo. Youth Medium.",
+    "full": "Champion black t-shirt with white logo. Youth Medium",
     "p": 4,
     "w": null,
     "c": "Kids & Baby",
@@ -122,7 +122,7 @@
   },
   {
     "t": "Gray Illinois Kids Wrestling State Championship hoodie, size S",
-    "full": "Gray Illinois Kids Wrestling State Championship hoodie with graphic featuring 'ILLINOIS KIDS Wrestling STATE CHAMPIONSHIP' and a wrestling mat design. Small stain on sleeve and pouch. SIZE Small.",
+    "full": "Gray Illinois Kids Wrestling State Championship hoodie with graphic featuring 'ILLINOIS KIDS Wrestling STATE CHAMPIONSHIP' and a wrestling mat design. Small stain on sleeve and pouch. SIZE Small",
     "p": 5.25,
     "w": 7,
     "c": "Grappling & Wrestling",
@@ -137,7 +137,7 @@
   },
   {
     "t": "Navy & orange Illinois Fighting Illini hoodie",
-    "full": "Navy & orange Illinois Fighting Illini hoodie with orange text reading 'ILLINOIS' and 'FIGHTING ILLINI'.",
+    "full": "Navy & orange Illinois Fighting Illini hoodie with orange text reading 'ILLINOIS' and 'FIGHTING ILLINI'",
     "p": 10,
     "w": null,
     "c": "Sweatshirts & Jackets",
@@ -150,7 +150,7 @@
   },
   {
     "t": "Red Perfect Angel zip-up hoodie with snake graphic",
-    "full": "Red Perfect Angel hoodie with white snake graphic on sleeve and 'Love Lives On' text on cuff.",
+    "full": "Red Perfect Angel hoodie with white snake graphic on sleeve and 'Love Lives On' text on cuff",
     "p": 17,
     "w": null,
     "c": "Sweatshirts & Jackets",
@@ -164,7 +164,7 @@
   },
   {
     "t": "John Galt cream zip-up hoodie, size XS/S",
-    "full": "John Galt cream zip up hoodie with small stain on the sleeve. SIZE XS/SMALL.",
+    "full": "John Galt Cream zip up hoodie with small stain on the sleeve. SIZE XS/SMALL",
     "p": 7,
     "w": null,
     "c": "Sweatshirts & Jackets",
@@ -194,7 +194,7 @@
   },
   {
     "t": "Women's black joggers with drawstring waist and pockets",
-    "full": "Women's black joggers with drawstring waist and pockets",
+    "full": "Women’s Black joggers with drawstring waist and pockets",
     "p": 2.5,
     "w": null,
     "c": "Pants & Shorts",
@@ -208,7 +208,7 @@
   },
   {
     "t": "Carolina Blues white and brown checkered button-up shirt, size L",
-    "full": "Carolina Blues white and brown checkered button up shirt. Size: Large",
+    "full": "Carolina Blues white and brown checkered button up shirt\nSize: Large",
     "p": 3,
     "w": null,
     "c": "Shirts & Tees",
@@ -255,8 +255,8 @@
   {
     "t": "Blue BJJ Fanatics Bernardo Faria \"Huge Honor for Me\" t-shirt",
     "full": "Blue BJJ Fanatics Bernardo Faria BJJ t-shirt with graphic of a cartoon man with the words 'HUGE HONOR FOR ME' and 'BJJ FANATICS'",
-    "p": 12,
-    "w": null,
+    "p": 10,
+    "w": 12,
     "c": "Grappling & Wrestling",
     "u": "https://www.depop.com/products/hard_8ork_works-blue-bjj-fanatics-bernardo-faria-26b7/",
     "src": "Depop",
@@ -340,24 +340,6 @@
     "o": 23
   },
   {
-    "t": "Navy blue NFL Chicago Bears shorts with orange bear logo, size S",
-    "full": "Navy blue NFL Chicago Bears shorts with orange bear logo, size S. BRAND NEW.",
-    "p": 20,
-    "w": 30,
-    "c": "Pants & Shorts",
-    "u": "https://www.depop.com/products/ha8d_work_works-navy-blue-nfl-chicago-bears-632e/",
-    "src": "Depop",
-    "imgs": [
-      "https://media-photos.depop.com/b1/350434873/5111388200_b1b3fdfb542d491a88443cfcaae5a767/P0.jpg",
-      "https://media-photos.depop.com/b1/350434873/5111385780_e91eb42459ba44b48723f00cd6826ccb/P0.jpg",
-      "https://media-photos.depop.com/b1/350434873/5111387136_aff68751ffcf4434a4698da638e35ffa/P0.jpg",
-      "https://media-photos.depop.com/b1/350434873/5111387422_5957893e00f94b77a4b34caa7412d735/P0.jpg",
-      "https://media-photos.depop.com/b1/350434873/5111387249_393d5fe774f1489380420c7bf3d7d943/P0.jpg",
-      "https://media-photos.depop.com/b1/350434873/5111386832_d6989c0e07264332ab531d01ef697bd1/P0.jpg"
-    ],
-    "o": 24
-  },
-  {
     "t": "Team Illinois Blue Chip Wrestling \"Not Like Us\" T-shirt",
     "full": "Team Illinois Blue Chip Wrestling \"Not Like Us\" T-shirt with black text and American flag graphic inside a USA map outline",
     "p": 20,
@@ -369,7 +351,7 @@
       "https://media-photos.depop.com/b1/350434873/5105817372_c6dbdedc090f420ca8ccf69cabde2f5f/P0.jpg",
       "https://media-photos.depop.com/b1/350434873/5105819396_9a34a021d3ec43c3a808b8fdcdfff6f5/P0.jpg"
     ],
-    "o": 25
+    "o": 24
   },
   {
     "t": "IBJJF Black Jiu Jitsu Championship 2024 T-shirt",
@@ -383,7 +365,7 @@
       "https://media-photos.depop.com/b1/350434873/5105795275_8896aeb616b74b20ac8129311ec43630/P0.jpg",
       "https://media-photos.depop.com/b1/350434873/5105795468_453f185de1f4423a85c4e865f331b24e/P0.jpg"
     ],
-    "o": 26
+    "o": 25
   },
   {
     "t": "IBJJF Black World Master Jiu-Jitsu T-shirt with yellow and blue logo",
@@ -397,7 +379,7 @@
       "https://media-photos.depop.com/b1/350434873/5105770488_5eb57a7935724027aebb364ccae23206/P0.jpg",
       "https://media-photos.depop.com/b1/350434873/5105772732_1e008ac61ec2466880bcfae0a7d98d62/P0.jpg"
     ],
-    "o": 27
+    "o": 26
   },
   {
     "t": "Blue and white BJJ Fanatics rash guard",
@@ -411,7 +393,7 @@
       "https://media-photos.depop.com/b1/350434873/5105729728_8dfb93d6875247359dd3d47e142c3a08/P0.jpg",
       "https://media-photos.depop.com/b1/350434873/5105729866_8be23f29ee34453dbc38c36cd1ddc24b/P0.jpg"
     ],
-    "o": 28
+    "o": 27
   },
   {
     "t": "Black/yellow Midwest Finishers rashguard compression shirt",
@@ -425,7 +407,7 @@
       "https://media-photos.depop.com/b1/350434873/5105664066_b128dd838b2a408081298d486211e0a9/P0.jpg",
       "https://media-photos.depop.com/b1/350434873/5105663667_3c6e28ff86714420a7e2d43e4da3492d/P0.jpg"
     ],
-    "o": 29
+    "o": 28
   },
   {
     "t": "Boohoo MAN Black & gold ornate swirl and feather design sweatpants Size M",
@@ -435,7 +417,7 @@
     "c": "Pants & Shorts",
     "u": "https://www.depop.com/products/alsda_6g1-boohoo-man-black-gold-3b5c/",
     "src": "Depop",
-    "o": 30,
+    "o": 29,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/4915712694_fa0350b0fbef45aba16b87e8592010ab/P0.jpg"
     ]
@@ -448,7 +430,7 @@
     "c": "Shirts & Tees",
     "u": "https://www.depop.com/products/hard_workdworks-jordan-1995-white-t-shirt-with-69cc/",
     "src": "Depop",
-    "o": 31,
+    "o": 30,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/5049708256_962b907ece2a4873bd355dac7c42c208/P0.jpg",
       "https://media-photos.depop.com/b1/350434873/5049712165_4150406dbf624601afb176140d450814/P0.jpg",
@@ -463,7 +445,7 @@
     "c": "Shirts & Tees",
     "u": "https://www.depop.com/products/hard_work_wor6s-hm-white-and-red-monstera-64b0/",
     "src": "Depop",
-    "o": 32,
+    "o": 31,
     "imgs": [
       "https://media-photos.depop.com/r1/350434873/5075644023_9e45e2b753554b5781e82a135c9666af/P0.jpg",
       "https://media-photos.depop.com/r1/350434873/5075642837_900da0b0e3db43d2ab54257ccea140c6/P0.jpg",
@@ -478,7 +460,7 @@
     "c": "Shirts & Tees",
     "u": "https://www.depop.com/products/hard_mork_works-express-mens-black-graphic-tee-8af6/",
     "src": "Depop",
-    "o": 33,
+    "o": 32,
     "imgs": [
       "https://media-photos.depop.com/r1/350434873/5075544321_26f4f464141c4e36a7f6b93f8f7dfc8d/P0.jpg",
       "https://media-photos.depop.com/r1/350434873/5075543842_f442d68af2954ecbb894fc0f2dc8ecaa/P0.jpg"
@@ -492,7 +474,7 @@
     "c": "Sweatshirts & Jackets",
     "u": "https://www.depop.com/products/hard_work_worzs-burgundy-off-the-shoulder-sweatshirt-1a6f/",
     "src": "Depop",
-    "o": 34,
+    "o": 33,
     "imgs": [
       "https://media-photos.depop.com/r1/350434873/5075528199_b4c499d91c3648cfb4a14ab4d524529c/P0.jpg"
     ]
@@ -505,7 +487,7 @@
     "c": "Shirts & Tees",
     "u": "https://www.depop.com/products/hard_work_worbs-red-not-today-satan-graphic-970d/",
     "src": "Depop",
-    "o": 35,
+    "o": 34,
     "imgs": [
       "https://media-photos.depop.com/r1/350434873/5075495600_77eeb45f6bc0412fa4c6cc1adf4151d9/P0.jpg",
       "https://media-photos.depop.com/r1/350434873/5075500998_46e75a3a387b43fcb9c6309c08baacee/P0.jpg",
@@ -520,7 +502,7 @@
     "c": "Pants & Shorts",
     "u": "https://www.depop.com/products/hayd_work_works-kenneth-cole-tech-joggers-with-2403/",
     "src": "Depop",
-    "o": 36,
+    "o": 35,
     "imgs": [
       "https://media-photos.depop.com/r1/350434873/5070866823_69ff54bc5ff44f3a9fdd83fbf404242b/P0.jpg",
       "https://media-photos.depop.com/r1/350434873/5070865865_ca12d73749a84e5cae935e3379d80f44/P0.jpg"
@@ -534,7 +516,7 @@
     "c": "Grappling & Wrestling",
     "u": "https://www.depop.com/products/hard_worc_works-akashi-do-behring-red-white-e64f/",
     "src": "Depop",
-    "o": 37,
+    "o": 36,
     "imgs": [
       "https://media-photos.depop.com/r1/350434873/5070814915_30fca651ac5d41da908f4d91d730aa6f/P0.jpg",
       "https://media-photos.depop.com/r1/350434873/5070813273_ab992029d2a1410d87ad607233f47eb0/P0.jpg"
@@ -548,7 +530,7 @@
     "c": "Shirts & Tees",
     "u": "https://www.depop.com/products/hard_work_wosks-mennace-two-tone-plaid-button-up-shirt-3f7c/",
     "src": "Depop",
-    "o": 38,
+    "o": 37,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/5049828019_5e47390d86c44d30a9219c7ecea83772/P0.jpg",
       "https://media-photos.depop.com/b1/350434873/5049830180_007c00db4b3f49b199b775a03187d43f/P0.jpg",
@@ -563,7 +545,7 @@
     "c": "Shirts & Tees",
     "u": "https://www.depop.com/products/hard_wor7_works-nautica-blue-polo-shirt-preppy-1638/",
     "src": "Depop",
-    "o": 39,
+    "o": 38,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/5049783049_7e5c24afa0b04a8c9049d2c356d1e7cf/P0.jpg",
       "https://media-photos.depop.com/b1/350434873/5049783373_6a0ecd2de89f47bfbc78909d8c36dfe8/P0.jpg",
@@ -572,13 +554,13 @@
   },
   {
     "t": "Millikan University White and blue vintage wrestling windbreaker jacket with blue stripes on sleeves and sides",
-    "full": "Millikan University White and blue vintage wrestling windbreaker jacket with blue stripes on sleeves and sides. Size XL. Light stain on back collar",
+    "full": "Millikan University White and blue vintage wrestling windbreaker jacket with blue stripes on sleeves and sides. Size XL. Light stain on back coller",
     "p": 8,
     "w": null,
     "c": "Grappling & Wrestling",
     "u": "https://www.depop.com/products/hard_work_wor9s-millikan-university-white-and-blue-e05a/",
     "src": "Depop",
-    "o": 40,
+    "o": 39,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/5049733838_7882241fb1d849ddb94223be162599f7/P0.jpg",
       "https://media-photos.depop.com/b1/350434873/5049739048_b83e12c5a71e44b6afca1d581ed0ef76/P0.jpg",
@@ -593,7 +575,7 @@
     "c": "Shoes & Gear",
     "u": "https://www.depop.com/products/hard_wori_works-dro-navy-blue-visor-with-7f18/",
     "src": "Depop",
-    "o": 41,
+    "o": 40,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/5048842681_e9bccab29234493e8a9aa7672a666e54/P0.jpg",
       "https://media-photos.depop.com/b1/350434873/5048845464_00d511351fb142d8b61ca6c8df41753a/P0.jpg",
@@ -609,7 +591,7 @@
     "c": "Shirts & Tees",
     "u": "https://www.depop.com/products/hard_work_rorks-ely-cattleman-xl-navy-blue-edfc/",
     "src": "Depop",
-    "o": 42,
+    "o": 41,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/5048591303_d8d071d1946f4165b6e51c46a9757b43/P0.jpg",
       "https://media-photos.depop.com/b1/350434873/5048595777_c2f17e4e44fb41c5a288266f9aca8a9c/P0.jpg"
@@ -623,7 +605,7 @@
     "c": "Shirts & Tees",
     "u": "https://www.depop.com/products/hlrd_work_works-lands-end-white-and-blue-5c72/",
     "src": "Depop",
-    "o": 43,
+    "o": 42,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/5048541840_c3e990c929804c308f4e135cff2b2f72/P0.jpg",
       "https://media-photos.depop.com/b1/350434873/5048544323_131a46f890eb4ae5924a66d743533fbd/P0.jpg"
@@ -637,7 +619,7 @@
     "c": "Kids & Baby",
     "u": "https://www.depop.com/products/aysda_681-carters-baby-blue-ribbed-knit-c292/",
     "src": "Depop",
-    "o": 44,
+    "o": 43,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/5031708849_6de2e8d48f2a44d5ad42c1f70aaab393/P0.jpg",
       "https://media-photos.depop.com/b1/350434873/5031713027_f6cc1e63e1f240c9b3247614bb59d709/P0.jpg"
@@ -651,20 +633,20 @@
     "c": "Kids & Baby",
     "u": "https://www.depop.com/products/alida_681-kids-pit-viper-yellow-and-a7e2/",
     "src": "Depop",
-    "o": 45,
+    "o": 44,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/5018415761_0a6ebbc01aab4cf29081ac887fe18db4/P0.jpg"
     ]
   },
   {
     "t": "Black Pizza Planet tee with graphic of a rocket ship and the words 'Pizza Planet' and 'SERVING YOUR LOCAL…",
-    "full": "Black Pizza Planet tee with graphic of a rocket ship and the words 'Pizza Planet' and 'SERVING YOUR LOCAL STAR CLUSTER' from Disney's Toy Story. Size XL",
+    "full": "Black Pizza Planet tee with graphic of a rocket ship and the words 'Pizza Planet' and 'SERVING YOUR LOCAL STAR CLUSTER' from Disneys Toy Story. Size XL",
     "p": 5,
     "w": null,
     "c": "Shirts & Tees",
     "u": "https://www.depop.com/products/alsda_6m1-black-pizza-planet-tee-with-52db/",
     "src": "Depop",
-    "o": 46,
+    "o": 45,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/4977642087_fb8ea4f07292424286e94d5ec8402449/P0.jpg"
     ]
@@ -677,7 +659,7 @@
     "c": "Shirts & Tees",
     "u": "https://www.depop.com/products/alsda_c81-under-armour-southern-illinois-university-1a03/",
     "src": "Depop",
-    "o": 47,
+    "o": 46,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/4976088519_3be12e2b2e3149ce978d877a157f6a0d/P0.jpg"
     ]
@@ -690,7 +672,7 @@
     "c": "Grappling & Wrestling",
     "u": "https://www.depop.com/products/alsga_681-level-black-lxb-lacc-xl-726a/",
     "src": "Depop",
-    "o": 48,
+    "o": 47,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/4970105400_f3fc5dd13db34b38ba1acd51d53d77a2/P0.jpg",
       "https://media-photos.depop.com/b1/350434873/4970114856_fd65c971d5054674b8d7a0feb0a92482/P0.jpg",
@@ -705,7 +687,7 @@
     "c": "Grappling & Wrestling",
     "u": "https://www.depop.com/products/al0da_681-white-dan-gable-classic-wrestling-6c96/",
     "src": "Depop",
-    "o": 49,
+    "o": 48,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/4924274417_014f78d8bb6c4a06b826e5491b99df79/P0.jpg"
     ]
@@ -718,7 +700,7 @@
     "c": "Shirts & Tees",
     "u": "https://www.depop.com/products/alsda_6g1-blue-st-louis-blues-hockey-c37f/",
     "src": "Depop",
-    "o": 50,
+    "o": 49,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/4915546034_201944ea873246fe9a3841a7eb5db2f1/P0.jpg"
     ]
@@ -731,7 +713,7 @@
     "c": "Pants & Shorts",
     "u": "https://www.depop.com/products/alsda_y81-greg-norman-tan-cream-8f3c/",
     "src": "Depop",
-    "o": 51,
+    "o": 50,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/4915744680_d87f0bbce52d4272a30efcf4c3f2af39/P0.jpg"
     ]
@@ -744,7 +726,7 @@
     "c": "Grappling & Wrestling",
     "u": "https://www.depop.com/products/arsda_681-albino-preto-gray-5078/",
     "src": "Depop",
-    "o": 52,
+    "o": 51,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/4915727959_a280f66f68e14b02b7adc96374c8f40b/P0.jpg"
     ]
@@ -757,7 +739,7 @@
     "c": "Shirts & Tees",
     "u": "https://www.depop.com/products/alsdab681-the-duck-company-black-evergreen-b652/",
     "src": "Depop",
-    "o": 53,
+    "o": 52,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/4915651720_52b1c07f105842c38f866de51858ba65/P0.jpg"
     ]
@@ -770,7 +752,7 @@
     "c": "Grappling & Wrestling",
     "u": "https://www.depop.com/products/alwda_681-albino-preto-gray-graphic-e27b/",
     "src": "Depop",
-    "o": 54,
+    "o": 53,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/4915627579_585f6e7d18ff4290bdb325622a6982e7/P0.jpg"
     ]
@@ -783,7 +765,7 @@
     "c": "Sweatshirts & Jackets",
     "u": "https://www.depop.com/products/a0sda_681-red-crewneck-sweatshirt-with-white-bb01/",
     "src": "Depop",
-    "o": 55,
+    "o": 54,
     "imgs": [
       "https://media-photos.depop.com/b1/350434873/4915527484_eabba74b78e44084887eb1d8cbe8126e/P0.jpg"
     ]
